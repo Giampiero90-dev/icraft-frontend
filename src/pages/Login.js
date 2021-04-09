@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Form, Container, Button, Col } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import { Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import "./login.css";
 
 export default function LogIn() {
   const [email, setEmail] = useState("");
@@ -14,8 +20,8 @@ export default function LogIn() {
   }
 
   return (
-    <div className="loginImage">
-      <Container className="loginGroup">
+    <div className="image">
+      <Container className="loginContainer">
         <Form as={Col} md={{ span: 6, offset: 3 }} className="loginForm">
           <h1>Login</h1>
           <Form.Group controlId="formBasicEmail">
@@ -40,7 +46,12 @@ export default function LogIn() {
             />
           </Form.Group>
           <Form.Group className="mt-5">
-            <Button variant="primary" type="submit" onClick={submitForm}>
+            <Button
+              className="loginButton"
+              variant="primary"
+              type="submit"
+              onClick={submitForm}
+            >
               Log in
             </Button>
           </Form.Group>
@@ -49,7 +60,7 @@ export default function LogIn() {
             to="/signup"
             style={{ textAlign: "center" }}
           >
-            New here? Sign up here
+            New here? Go to sign up{" "}
           </Link>
         </Form>
       </Container>

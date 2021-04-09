@@ -1,0 +1,47 @@
+h1 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.loginContainer {
+  padding-top: 10%;
+  padding-bottom: 20%;
+  padding-left: 5%;
+  text-align: left;
+}
+
+.image {
+  margin-top: 0px;
+  background-size: cover;
+  background-image: url("https://kinsta.com/wp-content/uploads/2018/09/best-google-fonts-1024x512.png");
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  /* Specific to this particular image */
+  .image {
+    left: 50%;
+    margin-left: -512px; /* 50% */
+  }
+}
+
+.loginButton {
+  text-align: center;
+}
+
+.loginForm {
+  margin-top: 2%;
+  color: aliceblue;
+}
+
+.loginText {
+  padding: 0%;
+}
