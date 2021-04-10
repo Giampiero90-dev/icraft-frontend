@@ -25,7 +25,7 @@ export default function LogIn() {
         <Form as={Col} md={{ span: 6, offset: 3 }} className="loginForm">
           <h1>Login</h1>
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label>Email Address</Form.Label>
             <Form.Control
               value={email}
               onChange={(event) => setEmail(event.target.value)}
