@@ -4,7 +4,10 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { Col } from "react-bootstrap";
 
-import { Link } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { selectToken } from "../store/user/selectors";
+import { signUp } from "../store/user/actions";
 
 import "./signup.css";
 
@@ -13,9 +16,20 @@ export default function Signup() {
   const [bio, setBio] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  //   const token = useSelector(selectToken);
+  //   const history = useHistory();
+
+  //   useEffect(() => {
+  //     if (token !== null) {
+  //       history.push("/");
+  //     }
+  //   }, [token, history]);
 
   function submitForm(event) {
     event.preventDefault();
+
+    dispatch(signUp(fullName, bio, email, password));
 
     setFullName("");
     setBio("");
