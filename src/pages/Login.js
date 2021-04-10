@@ -39,7 +39,7 @@ export default function LogIn() {
     <div className="image">
       <Container className="loginContainer">
         <Form as={Col} md={{ span: 6, offset: 3 }} className="loginForm">
-          <h1>Login</h1>
+          <h1 className="mt-5 mb-5">Login</h1>
           <Form.Group controlId="formBasicEmail">
             <Form.Label className="labelText">Email address</Form.Label>
             <Form.Control
