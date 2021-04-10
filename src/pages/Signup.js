@@ -29,7 +29,7 @@ export default function Signup() {
         <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
           <h1 className="mt-5 mb-5">Signup</h1>
           <Form.Group controlId="formBasicName">
-            <Form.Label>Name</Form.Label>
+            <Form.Label className="labelText">Name</Form.Label>
             <Form.Control
               value={fullName}
               onChange={(event) => setFullName(event.target.value)}
@@ -40,7 +40,7 @@ export default function Signup() {
           </Form.Group>
 
           <Form.Group controlId="formBio">
-            <Form.Label>Bio</Form.Label>
+            <Form.Label className="labelText">Bio</Form.Label>
             <Form.Control
               value={bio}
               onChange={(event) => setBio(event.target.value)}
@@ -51,7 +51,7 @@ export default function Signup() {
           </Form.Group>
 
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label className="labelText">Email address</Form.Label>
             <Form.Control
               value={email}
               onChange={(event) => setEmail(event.target.value)}
@@ -65,7 +65,7 @@ export default function Signup() {
           </Form.Group>
 
           <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+            <Form.Label className="labelText">Password</Form.Label>
             <Form.Control
               value={password}
               onChange={(event) => setPassword(event.target.value)}
