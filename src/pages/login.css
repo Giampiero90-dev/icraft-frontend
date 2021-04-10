@@ -1,12 +1,13 @@
 h1 {
   font-weight: bold;
   text-align: center;
+  font-size: 50px;
 }
 
 .loginContainer {
   padding-top: 10%;
   padding-bottom: 20%;
-  padding-left: 6%;
+  padding-left: 5%;
   text-align: left;
 }
 
@@ -33,7 +34,12 @@ h1 {
   }
 }
 
-.loginButton {
+.labelText {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.buttonLinkContainer {
   text-align: center;
 }
 

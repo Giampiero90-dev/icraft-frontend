@@ -16,14 +16,14 @@ export default function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-  const token = useSelector(selectToken);
-  const history = useHistory();
+  //   const token = useSelector(selectToken);
+  //   const history = useHistory();
 
-  useEffect(() => {
-    if (token !== null) {
-      history.push("/");
-    }
-  }, [token, history]);
+  //   useEffect(() => {
+  //     if (token === null) {
+  //       history.push("/signup");
+  //     }
+  //   }, [token, history]);
 
   function submitForm(event) {
     console.log("hi");
@@ -41,7 +41,7 @@ export default function LogIn() {
         <Form as={Col} md={{ span: 6, offset: 3 }} className="loginForm">
           <h1>Login</h1>
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email Address</Form.Label>
+            <Form.Label className="labelText">Email address</Form.Label>
             <Form.Control
               value={email}
               onChange={(event) => setEmail(event.target.value)}
@@ -52,7 +52,7 @@ export default function LogIn() {
           </Form.Group>
 
           <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+            <Form.Label className="labelText">Password</Form.Label>
             <Form.Control
               value={password}
               onChange={(event) => setPassword(event.target.value)}
@@ -61,23 +61,25 @@ export default function LogIn() {
               required
             />
           </Form.Group>
-          <Form.Group className="mt-5">
-            <Button
-              className="loginButton"
-              variant="primary"
-              type="submit"
-              onClick={submitForm}
+          <div className="buttonLinkContainer">
+            <Form.Group className="mt-5">
+              <Button
+                className="loginButton"
+                variant="primary"
+                type="submit"
+                onClick={submitForm}
+              >
+                Log in
+              </Button>
+            </Form.Group>
+            <Link
+              className="loginText"
+              to="/signup"
+              style={{ textAlign: "center" }}
             >
-              Log in
-            </Button>
-          </Form.Group>
-          <Link
-            className="loginText"
-            to="/signup"
-            style={{ textAlign: "center" }}
-          >
-            New here? Go to sign up{" "}
-          </Link>
+              New here? Go to sign up{" "}
+            </Link>
+          </div>
         </Form>
       </Container>
     </div>
