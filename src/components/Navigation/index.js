@@ -15,9 +15,24 @@ export default function Navigation() {
   const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar
+      style={{
+        backgroundColor: "#36b8cf",
+        fontSize: 30,
+        fontWeight: "bold",
+      }}
+      //   bg="dark"
+      variant="dark"
+      expand="lg"
+    >
       <Navbar.Brand as={NavLink} to="/">
-        icraft
+        <img
+          src="../../../public/logo/output-onlinepngtools.png"
+          width={100}
+          height={50}
+          className="d-inline-block align-top"
+          alt="icraft logo"
+        />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
