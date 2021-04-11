@@ -2,12 +2,15 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCreations } from "../store/creation/actions";
 import { selectCreations } from "../store/creation/selectors";
+
 import Form from "react-bootstrap/Form";
 import Spinner from "react-bootstrap/Spinner";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import ProgressBar from "react-bootstrap/ProgressBar";
+import Dropdown from "react-bootstrap/Dropdown";
 
 export default function HomePage() {
   const dispatch = useDispatch();
@@ -20,9 +23,20 @@ export default function HomePage() {
   return (
     <div>
       <h2 style={{ padding: 20, fontWeight: "bold" }}>Explore all creations</h2>
-      <Form>
+      {/* <Form>
         <Form.Control size="sm" type="text" placeholder="Search a creation" />
-      </Form>
+      </Form> */}
+      <Dropdown>
+        <Dropdown.Toggle variant="info" id="dropdown-basic">
+          Sort creations
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item href="#/action-1">Most Recent</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Most difficult</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Least difficult</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
 
       {!Array.isArray(creations) ? (
         <Spinner animation="border" role="status" variant="info">
@@ -35,6 +49,7 @@ export default function HomePage() {
               display: "flex",
               flexFlow: "wrap",
               marginTop: "20px",
+              justifyContent: "space-around",
             }}
           >
             {creations.map((creation) => {
@@ -45,10 +60,11 @@ export default function HomePage() {
                     style={{
                       width: "18rem",
                       height: "auto",
-                      border: "2px solid gray",
-                      boxShadow: "8px 8px 2px 1px gray",
-                      marginLeft: "5px",
+                      border: "1px solid gray",
+                      boxShadow: "6px 6px 10px 1px gray",
+                      marginLeft: "15px",
                       marginRight: "5px",
+                      marginBottom: "30px",
                     }}
                   >
                     <Card.Img
@@ -67,7 +83,15 @@ export default function HomePage() {
                       {/* <Card.Text style={{ fontSize: 12 }}>
                         {creation.description}
                       </Card.Text> */}
-                      <div>Difficulty level: {creation.difficulty}</div>
+                      <div>
+                        Difficulty level:{" "}
+                        <ProgressBar
+                          animated
+                          max={5}
+                          now={creation.difficulty}
+                        />
+                        {creation.difficulty}
+                      </div>
                       <div>Author: {creation.user.fullName}</div>
 
                       <Button variant="primary">View creation</Button>
