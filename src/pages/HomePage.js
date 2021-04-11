@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCreations } from "../store/creation/actions";
 import { selectCreations } from "../store/creation/selectors";
 
-import Form from "react-bootstrap/Form";
+// import Form from "react-bootstrap/Form";
 import Spinner from "react-bootstrap/Spinner";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
@@ -56,11 +56,12 @@ export default function HomePage() {
               return (
                 <Row>
                   <Card
+                    bg="info"
+                    text="light"
                     key={creation.id}
                     style={{
                       width: "18rem",
                       height: "auto",
-                      border: "1px solid gray",
                       boxShadow: "6px 6px 10px 1px gray",
                       marginLeft: "15px",
                       marginRight: "5px",
@@ -72,6 +73,8 @@ export default function HomePage() {
                         height: "200px",
                         width: "200px",
                         alignSelf: "center",
+                        borderRadius: "15px 15px 15px 15px",
+                        marginTop: "10px",
                       }}
                       variant="top"
                       src={creation.imageUrl}
