@@ -18,7 +18,7 @@ export default function Signup() {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   //   const token = useSelector(selectToken);
-  //   const history = useHistory();
+  const history = useHistory();
 
   //   useEffect(() => {
   //     if (token !== null) {
@@ -35,6 +35,7 @@ export default function Signup() {
     setBio("");
     setEmail("");
     setPassword("");
+    history.push("/");
   }
 
   return (

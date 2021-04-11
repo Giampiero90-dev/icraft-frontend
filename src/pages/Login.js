@@ -16,14 +16,14 @@ export default function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-  //   const token = useSelector(selectToken);
-  //   const history = useHistory();
+  // const token = useSelector(selectToken);
+  const history = useHistory();
 
-  //   useEffect(() => {
-  //     if (token === null) {
-  //       history.push("/signup");
-  //     }
-  //   }, [token, history]);
+  // useEffect(() => {
+  //   if (token === null) {
+  //     history.push("/signup");
+  //   }
+  // }, [token, history]);
 
   function submitForm(event) {
     console.log("hi");
@@ -33,6 +33,7 @@ export default function LogIn() {
 
     setEmail("");
     setPassword("");
+    history.push("/");
   }
 
   return (
