@@ -41,7 +41,12 @@ export default function Signup() {
   return (
     <div className="image">
       <Container className="formContainer">
-        <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
+        <Form
+          as={Col}
+          md={{ span: 6, offset: 3 }}
+          className="mt-5"
+          onSubmit={submitForm}
+        >
           <h1 className="mt-5 mb-5">Signup</h1>
           <Form.Group controlId="formBasicName">
             <Form.Label className="labelText">Name</Form.Label>
