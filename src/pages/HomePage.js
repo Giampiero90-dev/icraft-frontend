@@ -11,6 +11,7 @@ import Row from "react-bootstrap/Row";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   const [selectedSortingMethod, setSelectedSortingMethod] = useState("recent");
@@ -108,8 +109,9 @@ export default function HomePage() {
                         {creation.difficulty}
                       </div>
                       {/* <div>Author: {creation.user.fullName}</div> */}
-
-                      <Button variant="primary">View creation</Button>
+                      <Link to={`/creations/${creation.id}`}>
+                        <Button variant="primary">View creation</Button>
+                      </Link>
                     </Card.Body>
                   </Card>
                 </Row>
