@@ -1,42 +1,58 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCreations } from "../store/creation/actions";
-import { selectCreations } from "../store/creation/selectors";
+import { selectSortedCreations } from "../store/creation/selectors";
 
-// import Form from "react-bootstrap/Form";
 import Spinner from "react-bootstrap/Spinner";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import ProgressBar from "react-bootstrap/ProgressBar";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Dropdown from "react-bootstrap/Dropdown";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 export default function HomePage() {
+  const [selectedSortingMethod, setSelectedSortingMethod] = useState("recent");
   const dispatch = useDispatch();
-  const creations = useSelector(selectCreations);
+  const creations = useSelector(selectSortedCreations(selectedSortingMethod));
 
   useEffect(() => {
     dispatch(fetchCreations());
   }, [dispatch]);
 
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Sort creations
+    </Tooltip>
+  );
+
   return (
     <div>
       <h2 style={{ padding: 20, fontWeight: "bold" }}>Explore all creations</h2>
-      {/* <Form>
-        <Form.Control size="sm" type="text" placeholder="Search a creation" />
-      </Form> */}
-      <DropdownButton
-        variant="info"
-        id="dropdown-basic-button"
-        title="Sort creations"
+      <OverlayTrigger
+        placement="right"
+        delay={{ show: 250, hide: 400 }}
+        overlay={renderTooltip}
       >
-        <Dropdown.Item value="recent">Most recent</Dropdown.Item>
-        <Dropdown.Item value="difficult">Another action</Dropdown.Item>
-        <Dropdown.Item value="easy">Something else</Dropdown.Item>
-      </DropdownButton>
-
+        <select
+          style={{
+            padding: 12,
+            boxShadow: "3px 3px 10px 1px gray",
+            backgroundColor: "#36b8cf",
+            color: "white",
+            fontWeight: "bold",
+          }}
+          value={selectedSortingMethod}
+          onChange={(e) => setSelectedSortingMethod(e.target.value)}
+        >
+          <option value="recent">Most recent</option>
+          <option value="difficult">Most difficult</option>
+          <option value="easy">Most easy</option>
+          <option value="AZ">A-Z</option>
+          <option value="ZA">Z-A</option>
+        </select>
+      </OverlayTrigger>
       {!Array.isArray(creations) ? (
         <Spinner animation="border" role="status" variant="info">
           <span className="sr-only">Loading...</span>
@@ -82,9 +98,6 @@ export default function HomePage() {
                       <Card.Title style={{ fontWeight: "bold", fontSize: 25 }}>
                         {creation.title}
                       </Card.Title>
-                      {/* <Card.Text style={{ fontSize: 12 }}>
-                        {creation.description}
-                      </Card.Text> */}
                       <div>
                         Difficulty level:{" "}
                         <ProgressBar
