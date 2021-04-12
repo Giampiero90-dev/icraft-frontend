@@ -5,14 +5,14 @@ h1 {
 }
 
 .loginContainer {
-  padding-top: 10%;
+  padding-top: 7%;
   padding-bottom: 20%;
   padding-left: 5%;
   text-align: center;
 }
 
 .image {
-  margin-top: 0px;
+  margin-top: 97px;
   background-size: cover;
   background-image: url("https://kinsta.com/wp-content/uploads/2018/09/best-google-fonts-1024x512.png");
   background-repeat: no-repeat;
@@ -36,7 +36,7 @@ h1 {
 
 .labelText {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .buttonLinkContainer {

@@ -1,12 +1,15 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectToken } from "../../store/user/selectors";
+
 import NavbarItem from "./NavbarItem";
 import LoggedIn from "./LoggedIn";
 import LoggedOut from "./LoggedOut";
+import Logo from "../../logo/icraft-copy.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Navigation() {
@@ -20,6 +23,7 @@ export default function Navigation() {
         backgroundColor: "#36b8cf",
         fontSize: 30,
         fontWeight: "bold",
+        boxShadow: "3px 3px 10px 1px gray",
       }}
       //   bg="dark"
       variant="dark"
@@ -27,9 +31,9 @@ export default function Navigation() {
     >
       <Navbar.Brand as={NavLink} to="/">
         <img
-          src="../../../public/logo/output-onlinepngtools.png"
-          width={100}
-          height={50}
+          src={Logo}
+          width={145}
+          height={70}
           className="d-inline-block align-top"
           alt="icraft logo"
         />
