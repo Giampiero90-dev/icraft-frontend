@@ -7,6 +7,7 @@ import { selectToken } from "../../store/user/selectors";
 import NavbarItem from "./NavbarItem";
 import LoggedIn from "./LoggedIn";
 import LoggedOut from "./LoggedOut";
+import Logo from "../../logo/icraft-copy.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Navigation() {
@@ -27,9 +28,9 @@ export default function Navigation() {
     >
       <Navbar.Brand as={NavLink} to="/">
         <img
-          src="../../../public/logo/output-onlinepngtools.png"
-          width={100}
-          height={50}
+          src={Logo}
+          width={140}
+          height={70}
           className="d-inline-block align-top"
           alt="icraft logo"
         />

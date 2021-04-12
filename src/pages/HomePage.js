@@ -10,6 +10,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 
 export default function HomePage() {
@@ -26,17 +27,15 @@ export default function HomePage() {
       {/* <Form>
         <Form.Control size="sm" type="text" placeholder="Search a creation" />
       </Form> */}
-      <Dropdown>
-        <Dropdown.Toggle variant="info" id="dropdown-basic">
-          Sort creations
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Most Recent</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Most difficult</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Least difficult</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+      <DropdownButton
+        variant="info"
+        id="dropdown-basic-button"
+        title="Sort creations"
+      >
+        <Dropdown.Item value="recent">Most recent</Dropdown.Item>
+        <Dropdown.Item value="difficult">Another action</Dropdown.Item>
+        <Dropdown.Item value="easy">Something else</Dropdown.Item>
+      </DropdownButton>
 
       {!Array.isArray(creations) ? (
         <Spinner animation="border" role="status" variant="info">
@@ -56,8 +55,8 @@ export default function HomePage() {
               return (
                 <Row>
                   <Card
-                    bg="info"
-                    text="light"
+                    // bg="info"
+                    // text="light"
                     key={creation.id}
                     style={{
                       width: "18rem",
@@ -89,13 +88,13 @@ export default function HomePage() {
                       <div>
                         Difficulty level:{" "}
                         <ProgressBar
-                          animated
+                          // animated
                           max={5}
                           now={creation.difficulty}
                         />
                         {creation.difficulty}
                       </div>
-                      <div>Author: {creation.user.fullName}</div>
+                      {/* <div>Author: {creation.user.fullName}</div> */}
 
                       <Button variant="primary">View creation</Button>
                     </Card.Body>
