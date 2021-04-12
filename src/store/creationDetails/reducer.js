@@ -1,4 +1,4 @@
-const initialState = { loading: true, creation: null };
+const initialState = { loading: true, creation: {} };
 
 export default function creationDetails(state = initialState, action) {
   switch (action.type) {
