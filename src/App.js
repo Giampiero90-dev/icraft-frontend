@@ -1,4 +1,6 @@
+import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./App.css";
 
@@ -11,11 +13,17 @@ import Signup from "./pages/Signup";
 import CreationPage from "./pages/CreationPage";
 import AddCreationPage from "./pages/AddCreationPage";
 
-import { useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
+import { getUserWithStoredToken } from "./store/user/actions";
 
 function App() {
+  const dispatch = useDispatch();
+
   const isLoading = useSelector(selectAppLoading);
+
+  useEffect(() => {
+    dispatch(getUserWithStoredToken());
+  }, [dispatch]);
 
   return (
     <div className="App">

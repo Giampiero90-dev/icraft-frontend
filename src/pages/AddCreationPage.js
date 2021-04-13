@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCategories } from "../store/category/actions";
+import { selectCategories } from "../store/category/selectors";
 
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -7,14 +10,42 @@ import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 
 export default function AddCreationPage() {
+  const dispatch = useDispatch();
+  const categories = useSelector(selectCategories);
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [imageUrl, setImageUrl] = useState(
-    "https://kinsta.com/wp-content/uploads/2018/09/best-google-fonts-1024x512.png"
-  );
+  const [image, setImage] = useState("");
   const [difficulty, setDifficulty] = useState("");
+  const [category, setCategory] = useState("");
+
+  const uploadImage = async (e) => {
+    console.log("triggered");
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "dgcuu1zf");
+
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/giampierocloud/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const file = await res.json();
+    console.log(file.url);
+    setImage(file.url);
+  };
+  console.log(image);
+
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, [dispatch]);
 
   function submitForm(event) {
+      
     event.preventDefault();
   }
 
@@ -58,18 +89,14 @@ export default function AddCreationPage() {
           />
         </Form.Group>
         <Form.Group>
-          <Form.Label>Image url</Form.Label>
-          <Form.Control
-            value={imageUrl}
-            onChange={(event) => setImageUrl(event.target.value)}
-            type="text"
-            placeholder="Paste the url of your image"
+          <Form.Label>Upoad your image</Form.Label>
+          <input
+            // value={image}
+            type="file"
+            name="file"
+            placeholder="drag it here"
+            onChange={uploadImage}
           />
-          {imageUrl ? (
-            <Col className="mt-4" md={{ span: 8, offset: 2 }}>
-              <Image src={imageUrl} alt="preview" thumbnail />
-            </Col>
-          ) : null}
         </Form.Group>
 
         <Form.Group>
@@ -98,13 +125,23 @@ export default function AddCreationPage() {
 
         <Form.Group>
           <Form.Label>Category</Form.Label>
-          {/* <Form.Control
-            value={difficulty}
-            onChange={(event) => setDifficulty(event.target.value)}
-            type="number"
-            placeholder="From 1 to 5. Depending by the amount of time spent and the materials used."
-            maxLength="5"
-          /> */}
+          <select
+            style={{
+              padding: 12,
+              boxShadow: "3px 3px 10px 1px gray",
+              backgroundColor: "white",
+              color: "gray",
+              fontWeight: "bold",
+              borderRadius: "15px 15px 15px 15px",
+              border: 0,
+            }}
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            {categories.map((c) => (
+              <option value={c.id}>{c.name}</option>
+            ))}
+          </select>
         </Form.Group>
 
         <Form.Group className="mt-5">
