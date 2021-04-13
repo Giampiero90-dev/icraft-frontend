@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import { Switch, Route } from "react-router-dom";
 
 import "./App.css";
@@ -9,6 +8,7 @@ import MessageBox from "./components/MessageBox";
 import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import CreationPage from "./pages/CreationPage";
 
 import { useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
@@ -25,6 +25,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+        <Route path="/creations/:id" component={CreationPage} />
       </Switch>
     </div>
   );
