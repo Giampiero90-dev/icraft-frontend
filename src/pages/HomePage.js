@@ -30,7 +30,9 @@ export default function HomePage() {
 
   return (
     <div>
-      <h2 style={{ padding: 20, fontWeight: "bold" }}>Explore all creations</h2>
+      <h2 style={{ padding: 20, fontWeight: "bold", fontSize: 50 }}>
+        Explore all creations
+      </h2>
       <OverlayTrigger
         placement="right"
         delay={{ show: 250, hide: 400 }}
@@ -83,7 +85,7 @@ export default function HomePage() {
                       boxShadow: "6px 6px 10px 1px gray",
                       marginLeft: "15px",
                       marginRight: "5px",
-                      marginBottom: "30px",
+                      marginBottom: "60px",
                     }}
                   >
                     <Card.Img
@@ -93,6 +95,7 @@ export default function HomePage() {
                         alignSelf: "center",
                         borderRadius: "15px 15px 15px 15px",
                         marginTop: "10px",
+                        boxShadow: "3px 3px 10px 1px gray",
                       }}
                       variant="top"
                       src={creation.imageUrl}
@@ -102,17 +105,23 @@ export default function HomePage() {
                         {creation.title}
                       </Card.Title>
                       <div>
-                        Difficulty level:{" "}
+                        <p style={{ fontWeight: "bold" }}>Difficulty level: </p>
                         <ProgressBar
                           // animated
                           max={5}
                           now={creation.difficulty}
+                          style={{ boxShadow: "3px 3px 10px 1px gray" }}
                         />
                         {creation.difficulty}
                       </div>
                       {/* <div>Author: {creation.user.fullName}</div> */}
                       <Link to={`/creations/${creation.id}`}>
-                        <Button variant="primary">View creation</Button>
+                        <Button
+                          style={{ boxShadow: "3px 3px 10px 1px gray" }}
+                          variant="primary"
+                        >
+                          View creation
+                        </Button>
                       </Link>
                     </Card.Body>
                   </Card>
