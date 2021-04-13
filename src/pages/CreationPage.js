@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Card } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
@@ -14,5 +15,15 @@ export default function CreationPage() {
     dispatch(fetchOneCreation(id));
   }, [dispatch, id]);
 
-  return <div>{creation.title}</div>;
+  return (
+    <div>
+      <Card style={{ width: "50rem" }}>
+        <Card.Body>
+          <Card.Title>{creation.title}</Card.Title>
+          <Card.Text>{creation.description}</Card.Text>
+          <Card.Img variant="bottom" src={creation.imageUrl} />
+        </Card.Body>
+      </Card>
+    </div>
+  );
 }

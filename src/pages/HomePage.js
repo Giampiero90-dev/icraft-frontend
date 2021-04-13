@@ -43,6 +43,8 @@ export default function HomePage() {
             backgroundColor: "#36b8cf",
             color: "white",
             fontWeight: "bold",
+            borderRadius: "15px 15px 15px 15px",
+            border: 0,
           }}
           value={selectedSortingMethod}
           onChange={(e) => setSelectedSortingMethod(e.target.value)}
