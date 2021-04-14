@@ -2,22 +2,24 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../store/category/actions";
 import { selectCategories } from "../store/category/selectors";
+import { postCreation } from "../store/creation/actions";
+import { useHistory } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import Image from "react-bootstrap/Image";
 
 export default function AddCreationPage() {
   const dispatch = useDispatch();
   const categories = useSelector(selectCategories);
+  const history = useHistory();
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
-  const [difficulty, setDifficulty] = useState("");
-  const [category, setCategory] = useState("");
+  const [difficulty, setDifficulty] = useState(1);
+  const [category, setCategory] = useState(1);
 
   const uploadImage = async (e) => {
     console.log("triggered");
@@ -45,8 +47,9 @@ export default function AddCreationPage() {
   }, [dispatch]);
 
   function submitForm(event) {
-      
     event.preventDefault();
+    dispatch(postCreation(title, description, image, difficulty, category));
+    history.push("/");
   }
 
   return (
@@ -89,7 +92,7 @@ export default function AddCreationPage() {
           />
         </Form.Group>
         <Form.Group>
-          <Form.Label>Upoad your image</Form.Label>
+          <Form.Label>Upload your image</Form.Label>
           <input
             // value={image}
             type="file"
@@ -98,6 +101,13 @@ export default function AddCreationPage() {
             onChange={uploadImage}
           />
         </Form.Group>
+        {image ? (
+          <img
+            alt="preview"
+            src={image}
+            style={{ maxWidth: 250, maxHeight: 250 }}
+          />
+        ) : null}
 
         <Form.Group>
           <Form.Label>Difficulty level</Form.Label>
@@ -139,14 +149,20 @@ export default function AddCreationPage() {
             onChange={(e) => setCategory(e.target.value)}
           >
             {categories.map((c) => (
-              <option value={c.id}>{c.name}</option>
+              <option key={c.id} value={c.id}>
+                {c.name}
+              </option>
             ))}
           </select>
         </Form.Group>
 
         <Form.Group className="mt-5">
           <Button
-            style={{ boxShadow: "3px 3px 10px 1px gray" }}
+            style={{
+              boxShadow: "3px 3px 10px 1px gray",
+              color: "white",
+              fontWeight: "bold",
+            }}
             variant="warning"
             type="submit"
             onClick={submitForm}

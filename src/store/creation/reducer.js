@@ -10,6 +10,12 @@ export default function creation(state = initialState, action) {
         loading: false,
         allCreations: action.payload,
       };
+    case "creations/posted":
+      return {
+        ...state,
+        loading: false,
+        allCreations: [...state.allCreations, action.payload],
+      };
 
     default:
       return state;
