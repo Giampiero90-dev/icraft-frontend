@@ -23,7 +23,7 @@ export default function Navigation() {
         backgroundColor: "#36b8cf",
         fontSize: 30,
         fontWeight: "bold",
-        boxShadow: "3px 3px 10px 1px gray",
+        boxShadow: "1px 1px 3px 1px gray",
       }}
       //   bg="dark"
       variant="dark"

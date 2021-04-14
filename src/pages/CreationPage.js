@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
-import { Card } from "react-bootstrap";
+import { Image, Toast } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import moment from "moment";
 
 import { fetchOneCreation } from "../store/creationDetails/actions";
 import { selectOneCreation } from "../store/creationDetails/selectors";
+
+import "./CreationPage.css";
 
 export default function CreationPage() {
   const { id } = useParams();
@@ -17,13 +21,42 @@ export default function CreationPage() {
 
   return (
     <div>
-      <Card style={{ width: "50rem" }}>
-        <Card.Body>
-          <Card.Title>{creation.title}</Card.Title>
-          <Card.Text>{creation.description}</Card.Text>
-          <Card.Img variant="bottom" src={creation.imageUrl} />
-        </Card.Body>
-      </Card>
+      <Container className="pageContainer">
+        <Row>
+          <Col className="infoContainer">
+            <h2>{creation.title}</h2>
+            <p>Creator: {creation.user?.fullName}</p>
+            <p>{creation.description}</p>
+            <p>Difficulty level: {creation.difficulty}</p>
+            <p>Category: {creation.category?.name}</p>
+          </Col>
+          <Col>
+            <Image className="creationImage" src={creation.imageUrl} rounded />
+          </Col>
+        </Row>
+      </Container>
+      <Col>
+        <h3>Comments:</h3>
+        {!creation.comments ? (
+          <p>No comments left yet</p>
+        ) : (
+          <div>
+            {creation.comments.map((comment) => {
+              return (
+                <Toast>
+                  <Toast.Header>
+                    <strong className="mr-auto">{comment.author}</strong>
+                    <small>
+                      {moment(comment.createdAt).startOf("day").fromNow()}
+                    </small>
+                  </Toast.Header>
+                  <Toast.Body>{comment.commentText}</Toast.Body>
+                </Toast>
+              );
+            })}
+          </div>
+        )}
+      </Col>
     </div>
   );
 }
