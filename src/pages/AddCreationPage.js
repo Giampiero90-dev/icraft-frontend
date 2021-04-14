@@ -110,7 +110,7 @@ export default function AddCreationPage() {
         ) : null}
 
         <Form.Group>
-          <Form.Label>Difficulty level</Form.Label>
+          <Form.Label>Difficulty level*</Form.Label>
           <br></br>
           <select
             style={{
@@ -171,6 +171,11 @@ export default function AddCreationPage() {
           </Button>
         </Form.Group>
       </Form>
+      <br></br>
+      <p style={{ fontSize: "12px" }}>
+        *Difficulty should be evaluated depending by the amount of materials
+        used and the time spent working on your creation
+      </p>
     </Container>
   );
 }

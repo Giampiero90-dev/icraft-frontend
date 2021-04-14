@@ -11,6 +11,15 @@ export default function creationDetails(state = initialState, action) {
         creation: action.payload,
       };
 
+    case "comment/posted":
+      return {
+        loading: false,
+        creation: {
+          ...state.creation,
+          comments: [...state.creation.comments, action.payload],
+        },
+      };
+
     default:
       return state;
   }

@@ -30,7 +30,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <h2 style={{ padding: 20, fontWeight: "bold", fontSize: 50 }}>
+      <h2 style={{ padding: 20, fontWeight: "lighter", fontSize: 50 }}>
         Explore all creations
       </h2>
       <OverlayTrigger
@@ -73,11 +73,10 @@ export default function HomePage() {
           >
             {creations.map((creation) => {
               return (
-                <Row>
+                <Row key={creation.id}>
                   <Card
                     // bg="info"
                     // text="light"
-                    key={creation.id}
                     style={{
                       width: "18rem",
                       height: "auto",

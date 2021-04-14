@@ -14,7 +14,11 @@ export default function LoggedIn() {
         Hi, {user.fullName}
       </Nav.Item>
       <Button
-        style={{ boxShadow: "1px 1px 3px 1px gray" }}
+        style={{
+          boxShadow: "1px 1px 3px 1px gray",
+          color: "white",
+          fontWeight: "bold",
+        }}
         variant="warning"
         onClick={() => dispatch(logOut())}
       >
