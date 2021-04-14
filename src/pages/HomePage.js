@@ -30,7 +30,9 @@ export default function HomePage() {
 
   return (
     <div>
-      <h2 style={{ padding: 20, fontWeight: "bold" }}>Explore all creations</h2>
+      <h2 style={{ padding: 20, fontWeight: "bold", fontSize: 50 }}>
+        Explore all creations
+      </h2>
       <OverlayTrigger
         placement="right"
         delay={{ show: 250, hide: 400 }}
@@ -39,7 +41,6 @@ export default function HomePage() {
         <select
           style={{
             padding: 12,
-            boxShadow: "3px 3px 10px 1px gray",
             backgroundColor: "#36b8cf",
             color: "white",
             fontWeight: "bold",
@@ -80,10 +81,10 @@ export default function HomePage() {
                     style={{
                       width: "18rem",
                       height: "auto",
-                      boxShadow: "6px 6px 10px 1px gray",
+                      boxShadow: "2px 4px 10px 0px gray",
                       marginLeft: "15px",
                       marginRight: "5px",
-                      marginBottom: "30px",
+                      marginBottom: "60px",
                     }}
                   >
                     <Card.Img
@@ -102,17 +103,28 @@ export default function HomePage() {
                         {creation.title}
                       </Card.Title>
                       <div>
-                        Difficulty level:{" "}
+                        <p
+                          style={{
+                            fontWeight: "bold",
+                            marginTop: "20px",
+                            marginBottom: "5px",
+                          }}
+                        >
+                          Difficulty level: {creation.difficulty}
+                        </p>
                         <ProgressBar
                           // animated
                           max={5}
                           now={creation.difficulty}
+                          variant="info"
+                          style={{
+                            marginBottom: "35px",
+                          }}
                         />
-                        {creation.difficulty}
                       </div>
                       {/* <div>Author: {creation.user.fullName}</div> */}
                       <Link to={`/creations/${creation.id}`}>
-                        <Button variant="primary">View creation</Button>
+                        <Button variant="info">View creation</Button>
                       </Link>
                     </Card.Body>
                   </Card>
