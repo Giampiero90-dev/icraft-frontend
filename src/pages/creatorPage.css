@@ -36,7 +36,6 @@
 .cardGrid {
   display: flex;
   flex-flow: wrap;
-  margin-top: 20px;
 }
 
 .creationCard {
