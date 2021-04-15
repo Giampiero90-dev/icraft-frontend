@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+## iCRAFT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+iCRAFT is an app designed for DIY enthusiast. The users, after signing up, can share their best creations and at the same time get inspired by others.
 
-## Available Scripts
+## Technologies and concepts I used in this project
 
-In the project directory, you can run:
+- ReactJs
+- Redux
+- Express
+- REST API
+- Sequelize as ORM
+- Relational models
+- React-Bootstrap :zap:
 
-### `npm start`
+## Goals for this project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The goal of this project is to build a fullstack app using the resources and knowledge learnt during the bootcamp period at Codaisseur.
+I experimented for the first time with CSS and React-Bootstrap in order to give a profssional look and feel to my app.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- practice full-stack app development
+- build a working prototype in 2 weeks
+- apply skills which we learnt during Codaisseur bootcamp
+- explore new technology single-handedly
+- showcase and document development skills using:
+  - make a wireframe
+  - design a data model
+  - write user stories
+  - use git flow
 
-### `npm test`
+## User Story
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- As a user I want to share my best DIY creations.
+- As a new user I want to be able to create an account.
+- As a returning user I want to be able to log in my account.
+- As a logged in user I want to be able to post my newest creations with a title, description, image and category.
+- As a user I want to view all creations on the homepage.
+- As a user I want to be able to click on a creation and accede to the creation detail page.
+- As a user I want to click on the username of another crafter and be able to see his details and related creations.
 
-### `npm run build`
+## Project Board
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Go to [project board](https://github.com/users/Giampiero90-dev/projects/1)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Database Model
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Go to [database model](https://dbdiagram.io/d/606c1302ecb54e10c33eda3b)
 
-### `npm run eject`
+## Wireframe
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Go to [wireframe](https://wireframepro.mockflow.com/editor.jsp?editor=off&perm=Owner&projectid=M92016b2f56d8437d51a759674e899f6a1617696917475&publicid=0269a3a3451b440c93c36cc79035a9d3#/page/6962fd82a9e648aba00fa3278c7f35af)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Frontend repo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You can find it [here](https://github.com/Giampiero90-dev/icraft-frontend)
