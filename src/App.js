@@ -15,6 +15,7 @@ import AddCreationPage from "./pages/AddCreationPage";
 
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
+import CreatorPage from "./pages/CreatorPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ function App() {
         <Route path="/signup" component={Signup} />
         <Route path="/creations/:id" component={CreationPage} />
         <Route path="/addcreation" component={AddCreationPage} />
+        <Route path="/creators/:id" component={CreatorPage} />
       </Switch>
     </div>
   );

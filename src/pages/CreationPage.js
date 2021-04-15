@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Form, Image, Badge } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import moment from "moment";
 
 import { fetchOneCreation } from "../store/creationDetails/actions";
@@ -31,7 +31,10 @@ export default function CreationPage() {
               <strong>{creation.title}</strong>
             </h2>
             <p>
-              By: <strong>{creation.user?.fullName}</strong>
+              By:{" "}
+              <Link to={`/creators/${creation.user?.id}`}>
+                <strong>{creation.user?.fullName}</strong>
+              </Link>
             </p>
             <p>{creation.description}</p>
             <p>
