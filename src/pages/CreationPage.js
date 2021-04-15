@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Form, Image, Toast } from "react-bootstrap";
+import { Button, Form, Image, Badge } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -24,72 +24,84 @@ export default function CreationPage() {
 
   return (
     <div>
-      <Container className="pageContainer">
+      <Container className="topContainer">
         <Row>
           <Col className="infoContainer">
-            <h2>{creation.title}</h2>
-            <p>Creator: {creation.user?.fullName}</p>
+            <h2 className="creationTitle">
+              <strong>{creation.title}</strong>
+            </h2>
+            <p>
+              By: <strong>{creation.user?.fullName}</strong>
+            </p>
             <p>{creation.description}</p>
-            <p>Difficulty level: {creation.difficulty}</p>
-            <p>Category: {creation.category?.name}</p>
+            <p>
+              Difficulty level: <strong>{creation.difficulty}</strong>
+            </p>
+            <p>
+              Category:{" "}
+              <Badge style={{ fontSize: "15px" }} variant="info">
+                <strong>{creation.category?.name}</strong>
+              </Badge>
+            </p>
           </Col>
           <Col>
             <Image className="creationImage" src={creation.imageUrl} rounded />
           </Col>
         </Row>
       </Container>
-      <Col>
-        {!creation.comments ? (
-          <p>No comments left yet</p>
-        ) : (
-          <div>
-            <h3>Comments:</h3>
-
-            {creation.comments.map((comment) => {
-              return (
-                <Toast key={comment.id}>
-                  <Toast.Header>
-                    <strong className="mr-auto">{comment.author}</strong>
-                    <small>
-                      {moment(comment.createdAt).startOf("day").fromNow()}
-                    </small>
-                  </Toast.Header>
-                  <Toast.Body>{comment.commentText}</Toast.Body>
-                </Toast>
-              );
-            })}
-          </div>
-        )}
-      </Col>
-      <Col>
-        <Form>
-          <Form.Group>
-            <Form.Label>Leave a comment</Form.Label>
-            <Form.Control
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              type="text"
-              placeholder="Your name"
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Text</Form.Label>
-            <Form.Control
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-              as="textarea"
-              placeholder="Your comment"
-            />
-          </Form.Group>
-          <Button
-            variant="primary"
-            type="submit"
-            onClick={() => dispatch(postComment(name, comment))}
-          >
-            Submit
-          </Button>
-        </Form>
-      </Col>
+      <Container>
+        <Row>
+          <Col>
+            <Form className="commentFormGroup">
+              <Form.Group>
+                <h4>Leave a comment</h4>
+                <Form.Control
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  type="text"
+                  placeholder="Your name"
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Control
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
+                  as="textarea"
+                  placeholder="Your comment"
+                />
+              </Form.Group>
+              <Button
+                variant="info"
+                type="submit"
+                onClick={() => dispatch(postComment(name, comment))}
+              >
+                Submit
+              </Button>
+            </Form>
+          </Col>
+          {!creation.comments ? (
+            <p>No comments left yet</p>
+          ) : (
+            <Col>
+              {creation.comments.map((comment) => {
+                return (
+                  <div className="comment" key={comment.id}>
+                    <div className="commentHeader">
+                      <strong className="commentAuthor">
+                        {comment.author}
+                      </strong>
+                      <small calssName="commentDate">
+                        {moment(comment.createdAt).startOf("day").fromNow()}
+                      </small>
+                    </div>
+                    <div className="commentText">{comment.commentText}</div>
+                  </div>
+                );
+              })}
+            </Col>
+          )}
+        </Row>
+      </Container>
     </div>
   );
 }

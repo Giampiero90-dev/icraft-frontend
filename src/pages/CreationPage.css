@@ -1,8 +1,48 @@
-.pageContainer {
+.topContainer {
   margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.infoContainer {
+  justify-content: left;
+}
+
+.creationTitle {
+  font-size: 40px;
 }
 
 .creationImage {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
+}
+
+.commentFormGroup {
+  text-align: left;
+  margin: 5px;
+}
+
+.comment {
+  border-radius: 4px;
+  text-align: left;
+  margin: 20px;
+  background-color: white;
+  color: black;
+  box-shadow: 1px 1px 4px 0px gray;
+}
+
+.commentHeader {
+  padding: 5px;
+  border-radius: 4px;
+  background-color: rgb(230, 227, 227);
+  color: rgb(97, 93, 93);
+  display: flex;
+}
+
+.commentDate {
+  text-align: right;
+}
+
+.commentText {
+  padding: 5px;
 }
