@@ -59,6 +59,7 @@ export default function AddCreationPage() {
         borderRadius: "15px 15px 15px 15px",
         boxShadow: "3px 3px 10px 1px gray",
         marginTop: 30,
+        marginBottom: 30,
         width: 700,
         paddingTop: 10,
         paddingBottom: 10,

@@ -1,0 +1,65 @@
+.profileContainer {
+  margin-right: 2000px;
+}
+
+.creatorInfo {
+  padding-top: 40px;
+  padding-left: 30px;
+}
+
+.creatorName {
+  text-align: left;
+  font-size: 30px;
+}
+
+.creatorBio {
+  text-align: left;
+  font-size: 16px;
+  max-width: 800px;
+}
+
+.profilePic {
+  width: 100px;
+  height: 100px;
+  margin-top: 45px;
+  margin-left: 80px;
+}
+
+.myCreations {
+  padding: 20px;
+  padding-left: 60px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cardGrid {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.creationCard {
+  width: 18rem;
+  height: auto;
+  box-shadow: 2px 4px 10px 0px gray;
+  margin: 40px;
+}
+
+.cardTitle {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.cardImage {
+  width: 200px;
+  height: 200px;
+  align-self: center;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.cardButton {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 60px;
+  margin-right: 60px;
+}

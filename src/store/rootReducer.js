@@ -4,6 +4,7 @@ import user from "./user/reducer";
 import creations from "./creation/reducer";
 import creationDetails from "./creationDetails/reducer";
 import categoriesReducer from "./category/reducer";
+import creatorDetails from "./creator/reducer";
 
 export default combineReducers({
   appState,
@@ -11,4 +12,5 @@ export default combineReducers({
   creations,
   creationDetails,
   categoriesReducer,
+  creatorDetails,
 });

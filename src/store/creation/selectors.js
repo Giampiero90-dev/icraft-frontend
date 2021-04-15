@@ -5,6 +5,7 @@ export function selectCreations(reduxStore) {
 export const selectSortedCreations = (sortingMethod) => {
   return (reduxStore) => {
     const creations = [...reduxStore.creations.allCreations];
+    // eslint-disable-next-line array-callback-return
     return creations.sort((creationA, creationB) => {
       if (sortingMethod === "recent") {
         return creationA.createdAt - creationB.createdAt;
