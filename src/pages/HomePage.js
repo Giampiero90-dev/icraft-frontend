@@ -127,7 +127,6 @@ export default function HomePage() {
                           }}
                         />
                       </div>
-                      {/* <div>Author: {creation.user.fullName}</div> */}
                       <Link to={`/creations/${creation.id}`}>
                         <Button variant="info">View creation</Button>
                       </Link>

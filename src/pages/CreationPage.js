@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Form, Image, Badge } from "react-bootstrap";
+import { Button, Form, Image, Badge, ProgressBar } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
@@ -40,6 +40,8 @@ export default function CreationPage() {
             <p>
               Difficulty level: <strong>{creation.difficulty}</strong>
             </p>
+            <ProgressBar variant="info" now={creation.difficulty} max={5} />
+            <br></br>
             <p>
               Category:{" "}
               <Badge style={{ fontSize: "15px" }} variant="info">
@@ -93,7 +95,7 @@ export default function CreationPage() {
                       <strong className="commentAuthor">
                         {comment.author}
                       </strong>
-                      <small calssName="commentDate">
+                      <small id="commentDate">
                         {moment(comment.createdAt).startOf("day").fromNow()}
                       </small>
                     </div>
