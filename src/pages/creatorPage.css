@@ -1,5 +1,8 @@
+.profileContainer {
+  margin-right: 2000px;
+}
+
 .creatorInfo {
-  padding: 20px;
   padding-top: 40px;
   padding-left: 30px;
 }
@@ -34,7 +37,6 @@
   display: flex;
   flex-flow: wrap;
   margin-top: 20px;
-  justify-content: "space-around";
 }
 
 .creationCard {
