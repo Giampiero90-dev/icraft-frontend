@@ -30,7 +30,13 @@ export default function HomePage() {
 
   return (
     <div>
-      <h2 style={{ padding: 20, fontWeight: "bold", fontSize: 50 }}>
+      <h2
+        style={{
+          padding: 20,
+          fontWeight: "lighter",
+          fontSize: 50,
+        }}
+      >
         Explore all creations
       </h2>
       <OverlayTrigger
@@ -52,7 +58,7 @@ export default function HomePage() {
         >
           <option value="recent">Most recent</option>
           <option value="difficult">Most difficult</option>
-          <option value="easy">Most easy</option>
+          <option value="easy">Easiest</option>
           <option value="AZ">A-Z</option>
           <option value="ZA">Z-A</option>
         </select>
@@ -73,11 +79,10 @@ export default function HomePage() {
           >
             {creations.map((creation) => {
               return (
-                <Row>
+                <Row key={creation.id}>
                   <Card
                     // bg="info"
                     // text="light"
-                    key={creation.id}
                     style={{
                       width: "18rem",
                       height: "auto",
