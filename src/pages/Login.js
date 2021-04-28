@@ -45,7 +45,7 @@ export default function LogIn() {
           className="loginForm"
           onSubmit={submitForm}
         >
-          <h1 className="mt-5 mb-5">Login</h1>
+          <h1 className="title">Login</h1>
           <Form.Group controlId="formBasicEmail">
             <Form.Label className="labelText">Email address</Form.Label>
             <Form.Control

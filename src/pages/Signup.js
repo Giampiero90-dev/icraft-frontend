@@ -47,7 +47,7 @@ export default function Signup() {
           className="mt-5"
           onSubmit={submitForm}
         >
-          <h1 className="mt-5 mb-5">Signup</h1>
+          <h1 className="title">Signup</h1>
           <Form.Group controlId="formBasicName">
             <Form.Label className="labelText">Name</Form.Label>
             <Form.Control
