@@ -49,6 +49,6 @@ Go to [database model](https://dbdiagram.io/d/606c1302ecb54e10c33eda3b)
 
 Go to [wireframe](https://wireframepro.mockflow.com/editor.jsp?editor=off&perm=Owner&projectid=M92016b2f56d8437d51a759674e899f6a1617696917475&publicid=0269a3a3451b440c93c36cc79035a9d3#/page/6962fd82a9e648aba00fa3278c7f35af)
 
-## Frontend repo
+## Backend repo
 
-You can find it [here](https://github.com/Giampiero90-dev/icraft-frontend)
+You can find it [here](https://github.com/Giampiero90-dev/icraft-server-backend)
