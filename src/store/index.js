@@ -1,16 +1,14 @@
 import { createStore, applyMiddleware, compose } from "redux";
 
 import ReduxThunk from "redux-thunk";
-import reducer from "./rootReducer";
+import rootReducer from "./rootReducer";
 
-const enhancer = compose(
-  applyMiddleware(ReduxThunk),
-  window.navigator.userAgent.includes("Chrome")
-    ? window.__REDUX_DEVTOOLS_EXTENSION__ &&
-        window.__REDUX_DEVTOOLS_EXTENSION__()
-    : compose
-);
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
+  ? window.__REDUX_DEVTOOLS_EXTENSION__()
+  : (x) => x;
 
-const store = createStore(reducer, enhancer);
+const enhancer = compose(applyMiddleware(ReduxThunk), devTools);
+
+const store = createStore(rootReducer, enhancer);
 
 export default store;
