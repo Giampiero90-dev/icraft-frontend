@@ -71,7 +71,7 @@ export default function LogIn() {
             <Form.Group className="mt-5">
               <Button
                 className="loginButton"
-                variant="primary"
+                variant="info"
                 type="submit"
                 onClick={submitForm}
               >

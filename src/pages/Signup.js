@@ -39,7 +39,7 @@ export default function Signup() {
   }
 
   return (
-    <div className="image">
+    <div className="image2">
       <Container className="formContainer">
         <Form
           as={Col}
@@ -95,7 +95,7 @@ export default function Signup() {
             />
           </Form.Group>
           <Form.Group className="mt-5">
-            <Button variant="primary" type="submit" onClick={submitForm}>
+            <Button variant="info" type="submit" onClick={submitForm}>
               Sign up
             </Button>
           </Form.Group>
