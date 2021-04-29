@@ -2,6 +2,8 @@
 
 iCRAFT is an app designed for DIY enthusiast. The users, after signing up, can share their best creations and at the same time get inspired by others.
 
+![Alt Text](https://raw.githubusercontent.com/Giampiero90-dev/icraft-frontend/master/Hnet.com-image.gif)
+
 ## Technologies and concepts I used in this project
 
 - ReactJs
