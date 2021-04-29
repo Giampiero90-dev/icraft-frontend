@@ -52,3 +52,7 @@ Go to [wireframe](https://wireframepro.mockflow.com/editor.jsp?editor=off&perm=O
 ## Backend repo
 
 You can find it [here](https://github.com/Giampiero90-dev/icraft-server-backend)
+
+## Visit the app online
+
+Go to [icraft](https://icraft-app.netlify.app/)
