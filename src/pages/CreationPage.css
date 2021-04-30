@@ -42,12 +42,13 @@
   background-color: rgb(230, 227, 227);
   color: rgb(97, 93, 93);
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
 }
 
 #commentDate {
-  text-align: right;
-  justify-content: right;
+  /* text-align: right;
+  justify-content: right; */
+  align-self: flex-end;
 }
 
 .commentText {
