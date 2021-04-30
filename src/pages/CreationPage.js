@@ -101,7 +101,7 @@ export default function CreationPage() {
                           {comment.author}
                         </strong>
                         <small id="commentDate">
-                          {moment(comment.createdAt).startOf("day").fromNow()}
+                          {moment(comment.createdAt).fromNow()}
                         </small>
                       </div>
                       <div className="commentText">{comment.commentText}</div>
