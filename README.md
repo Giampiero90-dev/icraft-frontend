@@ -2,6 +2,8 @@
 
 iCRAFT is an app designed for DIY enthusiast. The users, after signing up, can share their best creations and at the same time get inspired by others.
 
+![Alt Text](https://github.com/Giampiero90-dev/icraft-frontend/blob/master/icraft%20gif.gif?raw=true)
+
 ## Technologies and concepts I used in this project
 
 - ReactJs
@@ -52,3 +54,7 @@ Go to [wireframe](https://wireframepro.mockflow.com/editor.jsp?editor=off&perm=O
 ## Backend repo
 
 You can find it [here](https://github.com/Giampiero90-dev/icraft-server-backend)
+
+## Visit the app online
+
+Go to [icraft](https://icraft-app.netlify.app/)
